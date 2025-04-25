@@ -47,9 +47,12 @@ Datos agregados (JSON resumido):
 Reglas:
 - El título del informe debe ser 'Indicador {num}', nada más.
 - No repitas “Indicador {num}” fuera del título.
-- Incluye secciones INTRODUCCIÓN, ACTIVIDADES, OBJETIVOS, ACTORES, RESULTADOS, CONCLUSIONES, RECOMENDACIONES.
+- Incluye secciones INTRODUCCIÓN, ACTIVIDADES, OBJETIVOS, ACTORES, RESULTADOS, CONCLUSIONES, RECOMENDACIONES, PLAN DE MEJORAS.
+- En RESULTADOS, después de los resultados iniciales que obtengas, incluye también un análisis bien detallado redactado en uno o más parrafos de como las actividades han contribuido 
+a la formación de los nuevos profesionales. Debes obligatoriamente incluir estadísticas que describan los resultados alcanzados.
 - En ACTORES redacta un párrafo con los totales: {agg['n_estudiantes_total']} estudiantes, {agg['n_docentes_total']} docentes, {agg['n_administrativos_total']} administrativos.
 - Resultados en párrafos; conclusiones y recomendaciones en ítems sin numeración; agrupa actividades/objetivos si son muchos.
+- En el plan de mejoras, incluye un párrafos que detallen los planes de mejora para cada una de las carreras que esten presentes en la encuesta. Esto es de suma importancia.
 - Omite con elegancia campos vacíos. Escribe en español, tono formal.
 """
 
