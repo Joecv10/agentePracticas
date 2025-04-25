@@ -1,0 +1,27 @@
+# API Keys and Environment Variables
+.env
+
+# Excel files
+files/*.xlsx
+files/*.xls
+
+# Generated reports
+reports/
+*.docx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.env/
+.venv/
+*.so
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
