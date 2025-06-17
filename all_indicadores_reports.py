@@ -8,6 +8,7 @@ from pathlib import Path
 from openai_utils import chat_completion_with_retry
 from dotenv import load_dotenv
 from prompt_helper import build_prompt
+from typing import Callable, Optional
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -15,13 +16,13 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 INDICADORES = [91, 92, 93, 94, 95, 96]
 EXCEL_FILE = "files/encuesta.xlsx"   # ruta al archivo
 REPORTS_DIR = Path("reports")
-MODEL = "gpt-4o-mini"              # ajusta si quieres
+MODEL = "gpt-4.1"              # ajusta si quieres
 TEMPERATURE = 0.4
 os.makedirs(REPORTS_DIR, exist_ok=True)
 # -----------------------------------
 
 
-def generate_reports(excel_path: str | Path) -> list[Path]:
+def generate_reports(excel_path: str | Path, progress_update: Optional[Callable[[float, str], None]] = None) -> list[Path]:
 
     df = pd.read_excel(excel_path)
     generated: list[Path] = []
@@ -75,6 +76,11 @@ def generate_reports(excel_path: str | Path) -> list[Path]:
         generated.append(path)
 
         print(f"✅ Indicador {num}: informe listo → {path.name}")
+        done += 1
+
+        if callable(progress_update):
+            pct = done / total
+            progress_update(pct, f"Indicador {num} listo ({done}/{total})")
 
     return generated
 
