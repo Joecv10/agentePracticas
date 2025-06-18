@@ -25,3 +25,9 @@ venv/
 .idea/
 *.swp
 .DS_Store
+
+# Docker
+*.tar
+**/logs/
+
+      
