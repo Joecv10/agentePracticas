@@ -1,0 +1,12 @@
+# Keep the build lean
+.git/
+.gitignore
+.dockerignore
+.vscode/
+__pycache__/
+.venv/
+.env            # do NOT bake secrets into the image
+*.py[cod]
+*.tar
+*.zip
+.DS_Store
