@@ -1,14 +1,18 @@
 import streamlit as st
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from dotenv import load_dotenv
 import all_indicadores_reports as run_all_indicadores
 import titulacion_report
 import openai
 import os
 import hashlib
 
+load_dotenv()
+
+
 # provide your key via env var or st.secrets
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY_ENV")
 
 st.title("Generador de Informes del Decanato Académico de la ESPOCH")
 
